@@ -212,6 +212,7 @@ def create_mcp() -> FastMCP:
 
         priorities = _current_priorities()
         priority = source_priority or priorities.get("jurisprudence", settings.source_priority_jurisprudence)
+        backend_order = ordered_backends(priority, ["pappers_justice", "openlegi"], ["pappers_justice", "openlegi"])
 
         allow_pappers, pappers_cb = can_call_backend(settings.circuit_breaker_file, "pappers_justice", settings.circuit_breaker_reset_timeout_seconds)
 
@@ -339,6 +340,7 @@ def create_mcp() -> FastMCP:
         priorities = _current_priorities()
         priority = source_priority or priorities.get("company", settings.source_priority_company)
         selected_backend = priority[0] if priority else "recherche_entreprises"
+        
 
         allow_company, company_cb = can_call_backend(settings.circuit_breaker_file, "recherche_entreprises", settings.circuit_breaker_reset_timeout_seconds)
         if not allow_company:
