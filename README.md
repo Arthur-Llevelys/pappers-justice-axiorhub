@@ -261,6 +261,7 @@ networks:
 ## Lancer
 
 ```bash
+docker network create ai-stack
 docker compose up -d --build
 ```
 
