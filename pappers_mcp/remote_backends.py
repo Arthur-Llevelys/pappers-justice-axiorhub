@@ -28,7 +28,6 @@ async def search_openlegi_jurisprudence(openapi_url: str, timeout_seconds: int, 
 
     async with httpx.AsyncClient(timeout=timeout_seconds) as client:
         if discovered["method"] == "get":
-        if discovered["method"] == "get":
             response = await client.get(url, params=params)
         else:
             response = await client.post(url, json=params)
