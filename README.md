@@ -39,9 +39,9 @@ Ajouts V5.5 :
 
 ```env
 LOCAL_STATE_DIR=/var/www/html/ai/pappers-justice-timo/state
-SOURCE_PRIORITY_FILE=/var/www/html/ai/pappers-justice-timo/state/source_priority.json
-BACKEND_METRICS_FILE=/var/www/html/ai/pappers-justice-timo/state/backend_metrics.json
-CIRCUIT_BREAKER_FILE=/var/www/html/ai/pappers-justice-timo/state/circuit_breaker.json
+SOURCE_PRIORITY_FILE=/var/www/html/ai/pappers-justice-axiorhub/state/source_priority.json
+BACKEND_METRICS_FILE=/var/www/html/ai/pappers-justice-axiorhub/state/backend_metrics.json
+CIRCUIT_BREAKER_FILE=/var/www/html/ai/pappers-justice-axiorhub/state/circuit_breaker.json
 CIRCUIT_BREAKER_FAILURE_THRESHOLD=3
 CIRCUIT_BREAKER_RESET_TIMEOUT_SECONDS=120
 ```
