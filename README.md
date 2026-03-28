@@ -184,24 +184,24 @@ sudo docker network connect ai-stack open-webui
 
 # 6. Paramétrer Open WebU :
 
-Dans Open WebUI :
+**Dans Open WebUI :**
 
-- Va dans Admin Settings puis External Tools / Connections ou Intégration .
-- Clique sur Add Server.
-- Choisis Type = MCP (Streamable HTTP) (et pas OpenApi).
+- Aller dans **Admin Settings** puis ***External Tools / Connections** ou **Intégration**.
+- Cliquer sur **Add Server.**
+- Choisir Type = **MCP (Streamable HTTP)** (et pas OpenApi).
 Il ne faut surtout pas choisir OpenAPI
-- Mets comme URL :
-http://host.docker.internal:8001/mcp/
+- Indiquer comme URL :
+**http://host.docker.internal:8001/mcp/**
 si Open WebUI est dans Docker et peut résoudre host.docker.internal. La doc Open WebUI recommande justement host.docker.internal:<port> quand le serveur MCP est sur l’hôte.
-- Authentication : mets None.
-- Laisse Function Name Filter List vide au départ.
-- Sauvegarde.
+- **Authentication** : mets **None**.
+- Nom : **papper-justice**
+- **Sauvegarde**.
 Recharge Open WebUI si nécessaire.
 
-- Puis, va dans Admin Settings puis Models :
-Dans le prompt system, je propose le prompt suivant :
+- Puis, aller dans **Admin Settings* puis **Models** :
+Dans le **prompt system** du modèle LLM, je propose le prompt suivant :
 
-**Tu es un assistant juridique français connecté aux outils MCP suivants : Legifrance, recherche-entreprises, pappers-justice-axiorhub .
+"Tu es un assistant juridique français connecté aux outils MCP suivants : Legifrance, recherche-entreprises, pappers-justice-axiorhub .
 
 🎯 Mission : Ta mission est d’aider l’utilisateur à :
 - Identifier et rechercher des sources juridiques officielles françaises (codes, lois, décrets, jurisprudence, JO, entreprises).
@@ -443,9 +443,9 @@ FORMAT OBLIGATOIRE DE LA RÉPONSE :
 - 1 à 2 phrases d’explication chacune, 
 - Éventuelles pistes complémentaires. 
 
-Toujours privilégier la fidélité aux textes officiels et à la jurisprudence citée. **
+Toujours privilégier la fidélité aux textes officiels et à la jurisprudence citée."
 
-Puis dans les reglages du Modèle de LLM cocher la case Pappers-justice et Sauvergarder les réglages.
+**Puis dans les reglages du Modèle de LLM cocher la case Pappers-justice pour activer ce mcp et Sauvergarder les réglages.**
 
 ---
 
@@ -520,9 +520,9 @@ CIRCUIT_BREAKER_FAILURE_THRESHOLD=3
 
 ---
 
-# 🧠 Exemples de prompts
+# 🧠 Exemples de prompts :
 
-## Recherche + fallback
+## Recherche + fallback :
 
 ```text
 Recherche jurisprudence sur licenciement faute grave
@@ -532,7 +532,7 @@ fallback OpenLegi si nécessaire
 
 ---
 
-## Génération conclusions
+## Génération conclusions : 
 
 ```text
 Génère des conclusions avec jurisprudence et pièces
@@ -540,7 +540,7 @@ Génère des conclusions avec jurisprudence et pièces
 
 ---
 
-## Analyse backend
+## Analyse backend : 
 
 ```text
 Donne-moi l'état des backends et métriques
@@ -548,28 +548,28 @@ Donne-moi l'état des backends et métriques
 
 ---
 
-# 🛠️ Tools disponibles
+# 🛠️ Tools disponibles :
 
-## 🔎 Recherche
+## 🔎 Recherche : 
 
 * `federated_search_jurisprudence`
 * `fallback_search_jurisprudence`
 * `federated_search_company`
 
-## 📊 Diagnostic
+## 📊 Diagnostic : 
 
 * `get_backend_status`
 * `run_backend_healthchecks`
 * `get_backend_metrics`
 * `get_circuit_breaker_status`
 
-## 🧠 Exploitation
+## 🧠 Exploitation :
 
 * `summarize_decision_for_llm`
 * `extract_motivation_snippets`
 * `build_conclusion_ready_citations`
 
-## 🧾 Génération
+## 🧾 Génération : 
 
 * `generate_conclusions_document`
 * `generate_assignation_document`
@@ -577,7 +577,7 @@ Donne-moi l'état des backends et métriques
 
 ---
 
-# 📊 Supervision & métriques
+# 📊 Supervision & métriques : 
 
 ✔ métriques par backend
 ✔ latence moyenne
@@ -589,7 +589,7 @@ Donne-moi l'état des backends et métriques
 
 ---
 
-# ❗ Dépannage
+# ❗ Dépannage : 
 
 <details>
 <summary>OpenLegi ne fonctionne pas</summary>
@@ -620,19 +620,19 @@ Donne-moi l'état des backends et métriques
 
 ---
 
-# ⚠️ Disclaimer
+# ⚠️ Disclaimer :
 
 Ce projet :
 
 * ❌ ne remplace pas un avocat
 * ❌ ne garantit pas l’exactitude juridique
-* ✔ accélère la recherche
+* ✔ accélère la recherche 
 * ✔ structure le travail
-* ✔ améliore la productivité
+* ✔ améliore la productivité en préparant des projets de conclusions ou d'assignations.
 
 ---
 
-# 🧠 Philosophie
+# 🧠 Philosophie :
 
 > Automatiser la mécanique de rédaction de conclusions ou d'une assignation.
 > Garder l’intelligence humaine pour la stratégie.
