@@ -15,18 +15,22 @@ def get_source_priority_payload(settings) -> dict:
 def set_source_priority_payload(settings, kind: str, backends: list[str], persist: bool = True) -> dict:
     if kind not in {"jurisprudence", "company"}:
         raise ValueError("kind must be either 'jurisprudence' or 'company'")
-        allowed = {
+
+    allowed = {
         "jurisprudence": {"pappers_justice", "openlegi"},
         "company": {"recherche_entreprises"},
     }
+
     invalid = [b for b in backends if b not in allowed[kind]]
     if invalid:
         raise ValueError(f"Unsupported backends for {kind}: {invalid}")
-    payload = load_json_file(settings.source_priority_file, {})
+
     payload = load_json_file(settings.source_priority_file, {})
     payload[kind] = backends
+
     if persist:
         save_json_file(settings.source_priority_file, payload)
+
     return {
         "ok": True,
         "kind": kind,
