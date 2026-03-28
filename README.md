@@ -228,7 +228,7 @@ CIRCUIT_BREAKER_FAILURE_THRESHOLD=3
 
 ```yaml
 services:
-  pappers-justice-timo:
+  pappers-justice-axiorhub:
     build:
       context: .
       dockerfile: Dockerfile
