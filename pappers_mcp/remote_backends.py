@@ -26,13 +26,29 @@ async def search_openlegi_jurisprudence(openapi_url: str, timeout_seconds: int, 
     url = operation_url(discovered)
     params = build_query_params(discovered, query)
 
-async with httpx.AsyncClient(timeout=timeout_seconds) as client:
-    if discovered["method"] == "get":
-        response = await client.get(url, params=params)
-    else:
-        response = await client.post(url, json=params)
-    response.raise_for_status()
-    payload = response.json()
+async def search_openlegi_jurisprudence(
+    openapi_url: str,
+    timeout_seconds: int,
+    cache_dir: str,
+    ttl_seconds: int,
+    query: dict,
+    force_refresh_schema: bool = False,
+) -> dict:
+    schema = load_openapi_schema(openapi_url, timeout_seconds, cache_dir, ttl_seconds, force_refresh=force_refresh_schema)
+    discovered = discover_best_operation(openapi_url, schema, target="jurisprudence")
+    if not discovered:
+        return {"ok": False, "error": "No suitable OpenLegi jurisprudence operation found in OpenAPI schema."}
+
+    url = operation_url(discovered)
+    params = build_query_params(discovered, query)
+
+    async with httpx.AsyncClient(timeout=timeout_seconds) as client:
+        if discovered["method"] == "get":
+            response = await client.get(url, params=params)
+        else:
+            response = await client.post(url, json=params)
+        response.raise_for_status()
+        payload = response.json()
 
     results = []
     for item in _flatten_results(payload):
