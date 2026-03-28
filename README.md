@@ -161,13 +161,14 @@ cd pappers-justice-axiorhub
 
 ```bash
 cp .env.example .env
+sudo nano .env
 ```
 
 ---
 
 # 🔐 Configuration `.env`
 
-### 🔑 OBLIGATOIRE
+### 🔑 OBLIGATOIRE : Ajouter votre clé API Pappers-justice : https://moncompte.pappers.fr/api
 
 ```env
 PAPPERS_API_KEY=TA_CLE_API
