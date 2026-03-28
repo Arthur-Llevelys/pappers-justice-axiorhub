@@ -16,7 +16,7 @@ from .logging_config import configure_logging
 from .analysis import analyze_case_strategy_payload, build_argumentation_strategy_payload
 from .utils import suggest_inline_references_for_text
 from .backends import normalize_pappers_search_response, backend_status_payload
-from .router import choose_backend_reason_with_priority, explain_source_selection_payload, federated_merge_decisions, federated_merge_companies
+from .router import choose_backend_reason_with_priority, explain_source_selection_payload, federated_merge_decisions, federated_merge_companies, ordered_backends
 from .remote_backends import search_openlegi_jurisprudence, search_company_backend
 from .healthchecks import run_backend_healthchecks_payload
 from .openapi_cache import refresh_openapi_cache_entries
