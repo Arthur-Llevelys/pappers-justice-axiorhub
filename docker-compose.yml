@@ -17,6 +17,8 @@ services:
       PAPPERS_MAX_PER_PAGE: 100
       PAPPERS_CONTENT_PREVIEW_LENGTH: 4000
       PAPPERS_JUSTICE_BASE_URL: https://api.pappers.fr/v1/justice
+    ports:
+      - "8001:8001"
     volumes:
       - /var/www/html/ai/pappers-justice-axiorhub:/var/www/html/ai/pappers-justice-axiorhub
     networks:
