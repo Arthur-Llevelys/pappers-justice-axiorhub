@@ -181,6 +181,7 @@ docker network create ai-stack
 docker compose up -d --build
 sudo docker network connect ai-stack open-webui
 ```
+Le contenair Docker se connecte sur  le port **8001**. 
 
 # 6. Paramétrer Open WebU :
 
