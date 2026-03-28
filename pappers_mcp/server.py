@@ -29,7 +29,7 @@ def create_mcp() -> FastMCP:
     settings = Settings.from_env()
     logger = configure_logging(settings.log_level)
     client = PappersJusticeClient(settings, logger)
-    mcp = FastMCP("pappers-justice-timo")
+    mcp = FastMCP("pappers-justice-axiorhub")
 
     health_state = run_backend_healthchecks_payload(settings)["checks"] if settings.auto_healthcheck_on_start else {}
 
