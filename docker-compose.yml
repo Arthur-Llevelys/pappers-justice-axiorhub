@@ -1,6 +1,6 @@
 services:
   pappers-justice-axiorhub:
-  image: pappers-justice-axiorhub:latest
+    image: pappers-justice-axiorhub:latest
     build:
       context: .
       dockerfile: Dockerfile
