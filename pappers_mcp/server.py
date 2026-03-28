@@ -214,26 +214,28 @@ def create_mcp() -> FastMCP:
         priority = source_priority or priorities.get("jurisprudence", settings.source_priority_jurisprudence)
         backend_order = ordered_backends(priority, ["pappers_justice", "openlegi"], ["pappers_justice", "openlegi"])
 
-        allow_pappers, pappers_cb = can_call_backend(settings.circuit_breaker_file, "pappers_justice", settings.circuit_breaker_reset_timeout_seconds)
+        pappers_results = []
+        pappers_ok = False
+        pappers_payload = {"ok": False, "error": "not_called"}
 
-        if allow_pappers:
-            pappers_payload = await search_decisions(
-                q=q,
-                question=question,
-                parties=parties,
-                numero_rg=numero_rg,
-                juridiction=juridiction,
-                date_decision_min=date_decision_min,
-                date_decision_max=date_decision_max,
-                page=page,
-                per_page=per_page,
-            )
-            pappers_ok = bool(pappers_payload.get("ok"))
-            pappers_results = normalize_pappers_search_response(pappers_payload) if pappers_ok else []
-        else:
-            pappers_payload = {"ok": False, "error": "Circuit breaker open for pappers_justice"}
-            pappers_ok = False
-            pappers_results = []
+        if backend_order[0] == "pappers_justice":
+            allow_pappers, _ = can_call_backend(settings.circuit_breaker_file, "pappers_justice", settings.circuit_breaker_reset_timeout_seconds)
+            if allow_pappers:
+                pappers_payload = await search_decisions(
+                    q=q,
+                    question=question,
+                    parties=parties,
+                    numero_rg=numero_rg,
+                    juridiction=juridiction,
+                    date_decision_min=date_decision_min,
+                    date_decision_max=date_decision_max,
+                    page=page,
+                    per_page=per_page,
+                )
+                pappers_ok = bool(pappers_payload.get("ok"))
+                pappers_results = normalize_pappers_search_response(pappers_payload) if pappers_ok else []
+            else:
+                pappers_payload = {"ok": False, "error": "Circuit breaker open for pappers_justice"}
 
         pappers_count = len(pappers_results)
         selected_backend, fallback_reason = choose_backend_reason_with_priority(priority, pappers_ok, pappers_count, min_results)
