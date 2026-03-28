@@ -278,8 +278,8 @@ docker compose up -d --build
         "--rm",
         "--network", "ai-stack",
         "--env-file", "/var/www/html/ai/pappers-justice-axiorhub/.env",
-        "-v", "/var/www/html/ai/pappers-justice-axiorhub:/app",
-        "pappers-justice-axiorhub"
+        "-v", "/var/www/html/ai/pappers-justice-axiorhub:/var/www/html/ai/pappers-justice-axiorhub",
+        "pappers-justice-axiorhub:latest"
       ]
     }
   }
