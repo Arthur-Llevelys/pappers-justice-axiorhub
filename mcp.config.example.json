@@ -1,14 +1,14 @@
 {
   "mcpServers": {
-    "pappers-justice-timo": {
+    "pappers-justice-axiorhub": {
       "command": "docker",
       "args": [
         "run",
         "--rm",
         "--network", "ai-stack",
-        "--env-file", "/var/www/html/ai/pappers-justice-timo/.env",
-        "-v", "/var/www/html/ai/pappers-justice-timo:/var/www/html/ai/pappers-justice-timo",
-        "pappers-justice-timo:latest"
+        "--env-file", "/var/www/html/ai/pappers-justice-axiorhub/.env",
+        "-v", "/var/www/html/ai/pappers-justice-timo:/var/www/html/ai/pappers-justice-axiorhub",
+        "pappers-justice-axiorhub:latest"
       ]
     }
   }
