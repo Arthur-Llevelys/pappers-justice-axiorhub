@@ -26,13 +26,13 @@ async def search_openlegi_jurisprudence(openapi_url: str, timeout_seconds: int, 
     url = operation_url(discovered)
     params = build_query_params(discovered, query)
 
-    async with httpx.AsyncClient(timeout=timeout_seconds) as client:
-        if discovered["method"] == "get":
-            response = await client.get(url, params=params)
-        else:
-            response = await client.post(url, json=params)
-        response.raise_for_status()
-        payload = response.json()
+async with httpx.AsyncClient(timeout=timeout_seconds) as client:
+    if discovered["method"] == "get":
+        response = await client.get(url, params=params)
+    else:
+        response = await client.post(url, json=params)
+    response.raise_for_status()
+    payload = response.json()
 
     results = []
     for item in _flatten_results(payload):
