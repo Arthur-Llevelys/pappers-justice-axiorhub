@@ -1,0 +1,26 @@
+services:
+  pappers-justice-timo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pappers-justice-timo
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      INSTALL_PATH: /var/www/html/ai/pappers-justice-timo
+      EXPORTS_DIR: /var/www/html/ai/pappers-justice-timo/exports
+      LOG_LEVEL: INFO
+      PAPPERS_TIMEOUT_SECONDS: 30
+      PAPPERS_MAX_PAGE: 200
+      PAPPERS_MAX_PER_PAGE: 100
+      PAPPERS_CONTENT_PREVIEW_LENGTH: 4000
+      PAPPERS_JUSTICE_BASE_URL: https://api.pappers.fr/v1/justice
+    volumes:
+      - /var/www/html/ai/pappers-justice-timo:/var/www/html/ai/pappers-justice-timo
+    networks:
+      - ai-stack
+
+networks:
+  ai-stack:
+    external: true
