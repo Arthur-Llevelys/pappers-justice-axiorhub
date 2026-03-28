@@ -53,9 +53,9 @@ class Settings:
         api_key = os.getenv("PAPPERS_API_KEY", "").strip()
         if not api_key:
             raise ValueError("PAPPERS_API_KEY is missing")
-        exports_dir = os.getenv("EXPORTS_DIR", "/var/www/html/ai/pappers-justice-timo/exports")
-        cache_dir = os.getenv("OPENAPI_CACHE_DIR", "/var/www/html/ai/pappers-justice-timo/cache")
-        state_dir = os.getenv("LOCAL_STATE_DIR", "/var/www/html/ai/pappers-justice-timo/state")
+        exports_dir = os.getenv("EXPORTS_DIR", "/var/www/html/ai/pappers-justice-axiorhub/exports")
+        cache_dir = os.getenv("OPENAPI_CACHE_DIR", "/var/www/html/ai/pappers-justice-axiorhub/cache")
+        state_dir = os.getenv("LOCAL_STATE_DIR", "/var/www/html/ai/pappers-justice-axiorhub/state")
         Path(exports_dir).mkdir(parents=True, exist_ok=True)
         Path(cache_dir).mkdir(parents=True, exist_ok=True)
         Path(state_dir).mkdir(parents=True, exist_ok=True)
@@ -67,7 +67,7 @@ class Settings:
             max_per_page=_int_env("PAPPERS_MAX_PER_PAGE", 100),
             content_preview_length=_int_env("PAPPERS_CONTENT_PREVIEW_LENGTH", 4000),
             log_level=os.getenv("LOG_LEVEL", "INFO").upper(),
-            install_path=os.getenv("INSTALL_PATH", "/var/www/html/ai/pappers-justice-timo"),
+            install_path=os.getenv("INSTALL_PATH", "/var/www/html/ai/pappers-justice-axiorhub"),
             exports_dir=exports_dir,
             openlegi_openapi_url=os.getenv("OPENLEGI_OPENAPI_URL", "http://host.docker.internal:8000/Legifrance/openapi.json").strip(),
             recherche_entreprises_openapi_url=os.getenv("RECHERCHE_ENTREPRISES_OPENAPI_URL", "http://host.docker.internal:8000/recherche-entreprises/openapi.json").strip(),
