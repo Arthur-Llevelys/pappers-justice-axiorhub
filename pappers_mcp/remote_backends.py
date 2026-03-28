@@ -17,7 +17,7 @@ def _flatten_results(payload):
     return []
 
 
-def search_openlegi_jurisprudence(openapi_url: str, timeout_seconds: int, cache_dir: str, ttl_seconds: int, query: dict, force_refresh_schema: bool = False) -> dict:
+async def search_openlegi_jurisprudence(openapi_url: str, timeout_seconds: int, cache_dir: str, ttl_seconds: int, query: dict, force_refresh_schema: bool = False) -> dict:   
     schema = load_openapi_schema(openapi_url, timeout_seconds, cache_dir, ttl_seconds, force_refresh=force_refresh_schema)
     discovered = discover_best_operation(openapi_url, schema, target="jurisprudence")
     if not discovered:
@@ -26,11 +26,12 @@ def search_openlegi_jurisprudence(openapi_url: str, timeout_seconds: int, cache_
     url = operation_url(discovered)
     params = build_query_params(discovered, query)
 
-    with httpx.Client(timeout=timeout_seconds) as client:
+    async with httpx.AsyncClient(timeout=timeout_seconds) as client:
         if discovered["method"] == "get":
-            response = client.get(url, params=params)
+        if discovered["method"] == "get":
+            response = await client.get(url, params=params)
         else:
-            response = client.post(url, json=params)
+            response = await client.post(url, json=params)
         response.raise_for_status()
         payload = response.json()
 
