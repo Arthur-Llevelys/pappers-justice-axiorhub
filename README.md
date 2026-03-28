@@ -59,7 +59,7 @@ Ce projet permet de transformer Open WebUI en **assistant juridique avancé**, c
 ```text
 Trouve-moi des décisions sur la rupture brutale des relations commerciales
 avec priorité Pappers, fallback OpenLegi
-````
+```
 
 ✔ tri par qualité
 ✔ fallback automatique
