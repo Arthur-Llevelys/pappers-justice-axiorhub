@@ -251,7 +251,7 @@ def create_mcp() -> FastMCP:
             if allow_openlegi:
                 started = time.time()
                 try:
-                    fallback_payload = search_openlegi_jurisprudence(
+                    fallback_payload = await search_openlegi_jurisprudence(
                         settings.openlegi_openapi_url,
                         settings.openapi_discovery_timeout_seconds,
                         settings.openapi_cache_dir,
