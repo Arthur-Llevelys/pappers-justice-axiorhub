@@ -707,4 +707,22 @@ Ce projet :
 
 ---
 
+# 🧰 Pour ceux qui ne veulent pas galérer :
+
+Pour information, j’ai également monté un site :
+
+👉 https://axiorhub.com
+
+Avec :
+- des tutos pour installer : Nextcloud, InvoiceNinja, OnlyOffice, etc.
+- ou une offre d'abonnement via un VPS (OVHCloud) pour avocats ou les entreprises qui veulent du clé en main
+
+L’idée étant, dans le même état d’esprit, de construire un écosystème open source cohérent pour les cabinets d’avocats (ou pour les entreprises ede manière générale).
+
+Aujourd’hui, beaucoup de cabinets en France reposent sur des solutions comme Microsoft 365, Google Workspace ou AWS, souvent pour de bonnes raisons (simplicité, coût maîtrisé, facilité et rapidité de déploiement).
+
+Mais ces solutions impliquent aussi des enjeux non négligeables : dépendance à des services propriétaires, tarifs fixés par utilisateur et par mois qui peuvent devenir élevés ...en les cumulant, hébergement des données hors France et UE dans certains cas, et questions récurrentes lies à l'utilisation des données à des fins de partages publicitaires, d'entrainement des IA propriétaires et du CloudAct/PatriotAct...etc.
+
+---
+
 
