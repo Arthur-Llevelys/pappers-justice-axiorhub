@@ -8,9 +8,9 @@
 
 Serveur **MCP (Model Context Protocol)** pour **Open WebUI** permettant d’exploiter :
 
-- 🧠 **Pappers Justice** (source principale)
-- ⚖️ **OpenLegi** (fallback / enrichissement)
-- 🏢 **recherche-entreprises** (données sociétés)
+- 🧠 **Pappers Justice** (source principale) : https://justice.pappers.fr/blog/api
+- ⚖️ **OpenLegi** (fallback / enrichissement) : https://www.openlegi.fr/
+- 🏢 **recherche-entreprises** (données sociétés) : 
 
 👉 Objectif : **recherche juridique augmentée + génération de documents contentieux**
 
@@ -131,12 +131,25 @@ Fonctionnalités clés :
 
 Tu dois déjà avoir :
 
-* Docker + Docker Compose
-* Open WebUI
-* Ollama
-* MCP **OpenLegi**
-* MCP **recherche-entreprises**
-* une clé API **Pappers Justice**
+* Un ordinateur sous linux (Ubuntu 24.04), de préférence avec une ou deux cartes graphiques, ou un Mac.
+* Docker + Docker Compose :
+  * https://www.datacamp.com/fr/tutorial/install-docker-compose
+* Open WebUI :
+  * https://docs.openwebui.com/getting-started/quick-start/ , ou :
+  * https://axiorhub.com/openwebui/#openwebui
+* Ollama :
+  * https://docs.ollama.com/docker , ou :
+  * https://juris-tyr.com/artificial-intelligence-open-source/#ollama
+* Un MCP Docker : 
+  * https://github.com/masterno12/webui-mcpo ou
+  * https://deepwiki.com/open-webui/mcpo/5.1-docker-deployment , ou :
+  * https://axiorhub.com/openwebui/#mcp
+* MCP **OpenLegi** :
+  * https://auth.openlegi.fr/documentation/ 
+* MCP **recherche-entreprises** :
+  * https://lobehub.com/fr/mcp/yoanbernabeu-mcp-recherche-entreprises 
+* une clé API **Pappers Justice** :
+  * https://moncompte.pappers.fr/api 
 
 ---
 
