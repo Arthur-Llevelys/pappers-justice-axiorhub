@@ -52,7 +52,7 @@ Ce projet permet de transformer Open WebUI en **assistant juridique avancé**, c
 
 ---
 
-# 🎯 Cas d’usage avocat
+# 🎯 Cas d’usage avocat (en contentieux) en France
 
 ## 🔎 Recherche jurisprudence intelligente
 
@@ -116,7 +116,7 @@ MCP (ce repo)
 Fonctionnalités clés :
 
 * 🔁 fallback intelligent
-* 🧠 scoring qualité
+* 🧠 scoring 
 * 🧹 déduplication
 * 📡 traçabilité source
 * ⚡ cache OpenAPI
@@ -132,23 +132,26 @@ Fonctionnalités clés :
 Tu dois déjà avoir :
 
 * Un ordinateur sous linux (Ubuntu 24.04), de préférence avec une ou deux cartes graphiques, ou un Mac.
-* Docker + Docker Compose :
+* Docker + Docker Compose installés :
   * https://www.datacamp.com/fr/tutorial/install-docker-compose
 * Open WebUI :
-  * https://docs.openwebui.com/getting-started/quick-start/ , ou :
+  * https://docs.openwebui.com/getting-started/quick-start/ , ou (autre tutoriel) :
   * https://axiorhub.com/openwebui/#openwebui
 * Ollama :
   * https://docs.ollama.com/docker , ou :
   * https://juris-tyr.com/artificial-intelligence-open-source/#ollama
-* Un MCP Docker : 
-  * https://github.com/masterno12/webui-mcpo ou
-  * https://deepwiki.com/open-webui/mcpo/5.1-docker-deployment , ou :
+* Si tu n'as pas de carte graphique performante et que tu souhaites un minimum de sécurité des données) :
+  * une clé API Openrouteur : https://openrouter.ai/ avec les réglages pour anonymiser - au mieux - votre utilisation des LLM via Openrouter : une fois connecté, aller dans l'onglet Guardrails ->  Privacy Settings ->  Control how your data is used for training and logging purposes : case décochée - Enable paid endpoints that may train on inputs : case décochée - Control whether to enable paid endpoints that can anonymously use your data for training purposes : case décochée -> Enable free endpoints that may train on inputs : case décochée -> Free model providers often retain and/or train on prompts and completions (applies to both chatroom and API usage) : case décochée - Enable free endpoints that may publish prompts  : case décochée - ZDR Endpoints Only  : case cochée.
+  * ou une clé API Ollama cloud (mais il faudra anonymiser vos données...) : https://docs.ollama.com/cloud
+* Un MCP Docker pour installer les mcp OpenLegi er Recherche-entreprise en utilisant le port 8000 : 
+  * https://github.com/masterno12/webui-mcpo , ou (autre tutoriel) :
+  * https://deepwiki.com/open-webui/mcpo/5.1-docker-deployment , ou (autre tutoriel) :
   * https://axiorhub.com/openwebui/#mcp
 * MCP **OpenLegi** :
   * https://auth.openlegi.fr/documentation/ 
 * MCP **recherche-entreprises** :
   * https://lobehub.com/fr/mcp/yoanbernabeu-mcp-recherche-entreprises 
-* une clé API **Pappers Justice** :
+* une clé API **Pappers Justice** (on utilisera le port 8001 pour ce mcp à part) :
   * https://moncompte.pappers.fr/api 
 
 ---
