@@ -8,7 +8,7 @@
 
 Serveur **MCP (Model Context Protocol)** pour **Open WebUI** permettant d’exploiter :
 
-- 🧠 **Pappers Justice** (source principale) : https://justice.pappers.fr/blog/api
+- 🧠 **Pappers Justice** (source principale) (Jurisprudence et Lois et réglements Français) : https://justice.pappers.fr/blog/api
 - ⚖️ **OpenLegi** (fallback / enrichissement - Legifrance - Droit Français ) : https://www.openlegi.fr/
 - 🏢 **recherche-entreprises** (données sociétés -Inpi base de données entreprises en France) : https://www.data.gouv.fr/reuses/mcp-recherche-dentreprises
 
