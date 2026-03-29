@@ -10,7 +10,7 @@ Serveur **MCP (Model Context Protocol)** pour **Open WebUI** permettant d’expl
 
 - 🧠 **Pappers Justice** (source principale) : https://justice.pappers.fr/blog/api
 - ⚖️ **OpenLegi** (fallback / enrichissement) : https://www.openlegi.fr/
-- 🏢 **recherche-entreprises** (données sociétés) : 
+- 🏢 **recherche-entreprises** (données sociétés) : https://www.data.gouv.fr/reuses/mcp-recherche-dentreprises
 
 👉 Objectif : **recherche juridique augmentée + génération de documents contentieux**
 
